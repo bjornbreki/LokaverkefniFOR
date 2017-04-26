@@ -1,0 +1,5 @@
+H:\4_onn\c\lokaverkefni\lokaverkefni_for\lokaverkefni_for\bin\Debug\lokaverkefni_for.dll
+H:\4_onn\c\lokaverkefni\lokaverkefni_for\lokaverkefni_for\bin\Debug\lokaverkefni_for.pdb
+H:\4_onn\c\lokaverkefni\lokaverkefni_for\lokaverkefni_for\obj\Debug\lokaverkefni_for.csprojResolveAssemblyReference.cache
+H:\4_onn\c\lokaverkefni\lokaverkefni_for\lokaverkefni_for\obj\Debug\lokaverkefni_for.dll
+H:\4_onn\c\lokaverkefni\lokaverkefni_for\lokaverkefni_for\obj\Debug\lokaverkefni_for.pdb

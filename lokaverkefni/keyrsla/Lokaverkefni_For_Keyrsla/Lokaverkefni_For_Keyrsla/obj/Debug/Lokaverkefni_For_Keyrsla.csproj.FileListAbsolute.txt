@@ -1,0 +1,8 @@
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.exe.config
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.exe
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.pdb
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\lokaverkefni_for.dll
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\lokaverkefni_for.pdb
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.csprojResolveAssemblyReference.cache
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.exe
+H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.pdb
