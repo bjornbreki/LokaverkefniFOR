@@ -15,5 +15,11 @@ namespace lokaverkefni_for
         }// endir á public
 
         public string Nafn { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString()
+                + string.Format("\nNafn{3} Fótbolti {0} Handbolti {1} Korfubolti {2}", Fotbolti, Handbolti, Korfubolti, Nafn);
+        }
     }// endir á main
 }

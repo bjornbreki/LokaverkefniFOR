@@ -17,7 +17,10 @@ namespace Lokaverkefni_For_Keyrsla
          */
         static void Main(string[] args)
         {
-            Ithrottarlid lid_1 = new Ithrottarlid(7, 5, 8, "Þróttur");
+            Random rand = new Random();
+            int fotbotlii = rand.Next(50, 101);
+            Console.WriteLine(fotbotlii);
+            Ithrottarlid lid_1 = new Ithrottarlid(rand.Next(50, 101), rand.Next(50, 101), rand.Next(50, 101), "Breiðablik");
             Console.WriteLine(lid_1);
             Console.ReadLine();
         }// endir á main
