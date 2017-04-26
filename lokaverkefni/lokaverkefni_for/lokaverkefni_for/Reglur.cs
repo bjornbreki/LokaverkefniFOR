@@ -8,6 +8,21 @@ namespace lokaverkefni_for
 {
     public class Reglur
     {
+        public Reglur(int fotbolti, int handbolti, int korfubolti)
+        {
+            Fotbolti = fotbolti;
+            Handbolti = handbolti;
+            Korfubolti = korfubolti;
+        }// endir á public Reglur
 
+        public int Fotbolti { get; set; }
+        public int Handbolti { get; set; }
+        public int Korfubolti { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString()
+                + string.Format("\n Fótbolti {0} Handbolti {1} Korfubolti {2}", Fotbolti, Handbolti, Korfubolti);
+        }
     }// endir á main
 }

@@ -8,6 +8,12 @@ namespace lokaverkefni_for
 {
     public class Ithrottarlid : Reglur
     {
+        public Ithrottarlid(int fotbolti, int handbolti, int korfubolti, string nafn)
+            : base(fotbolti, handbolti, korfubolti)
+        {
+            Nafn = nafn;
+        }// endir á public
 
+        public string Nafn { get; set; }
     }// endir á main
 }
