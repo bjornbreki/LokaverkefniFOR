@@ -21,8 +21,7 @@ namespace lokaverkefni_for
 
         public override string ToString()
         {
-            return base.ToString()
-                + string.Format("\n Fótbolti {0} Handbolti {1} Korfubolti {2}", Fotbolti, Handbolti, Korfubolti);
+            return string.Format("Fótbolti {0} Handbolti {1} Korfubolti {2}", Fotbolti, Handbolti, Korfubolti);
         }
     }// endir á main
 }

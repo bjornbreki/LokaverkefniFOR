@@ -17,11 +17,16 @@ namespace Lokaverkefni_For_Keyrsla
          */
         static void Main(string[] args)
         {
+            Ithrottarlid[] lid = new Ithrottarlid[7]; 
+            string[] nofn = new string[]{"Breiðablik", "HK", "KR", "Stjarnan", "Hamar", "Grótta", "FH"};
+            
             Random rand = new Random();
-            int fotbotlii = rand.Next(50, 101);
-            Console.WriteLine(fotbotlii);
-            Ithrottarlid lid_1 = new Ithrottarlid(rand.Next(50, 101), rand.Next(50, 101), rand.Next(50, 101), "Breiðablik");
-            Console.WriteLine(lid_1);
+            for (int i = 0; i < lid.Length; i++)
+            {
+                lid[i] = new Ithrottarlid(rand.Next(50, 101), rand.Next(50, 101), rand.Next(50, 101), nofn[i]);
+                Console.WriteLine(lid[i]+"\n");
+            }
+            
             Console.ReadLine();
         }// endir á main
     }
