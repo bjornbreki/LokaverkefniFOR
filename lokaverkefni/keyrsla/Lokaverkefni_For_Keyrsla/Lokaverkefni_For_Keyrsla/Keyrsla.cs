@@ -17,31 +17,46 @@ namespace Lokaverkefni_For_Keyrsla
          */
         static void Main(string[] args)
         {
-            Ithrottarlid[] lid = new Ithrottarlid[45];
+            //Ithrottarlid[] lid = new Ithrottarlid[45];
             int[] Fotbolti = new int[45];
             int[] Handbolti = new int[45];
             int[] Korfubolti = new int[45];
 
-
+            List<Ithrottarlid> stokkur = new List<Ithrottarlid>();
+            List<Ithrottarlid> stokkur_not = new List<Ithrottarlid>();
+            List<Ithrottarlid> stokkur_tol = new List<Ithrottarlid>();
             string[] nofn = new string[]{"Afturelding", "Álftanes", "Ármann", "Björk", "Breidablik", "FH", "Fjölnir", "Fram", "FSU", "Fylkir", "Gerpla", "Gnupverjar", "Grindavík", "Grótta", "Grundafjordur",
                 "Hamar", "Hamrarnir", "Haukar", "HK", "Höttur", "Hrunamenn", "ÍA", "ÍBV", "IF Mílan", "ÍG", "ÍR", "Íþróttarfélagið Hörður", "Íþróttarfélag Breiðholts", "KR", "Leiknir", "Njardvík",
                 "Reykdælir", "Reynir Sandgerði", "Sindri", "Snæfell", "Stál Úlfur", "Stjarnan", "UMF Akureyri", "UMF Hekla", "UMF Kormákur", "UMF Þór", "Valur", "Volsungur", "Þór Akureyri", "Þróttur"};
             
             Random rand = new Random();
 
-            int tala1 = rand.Next(0, 46);
-            int tala2 = rand.Next(0, 46);
-
+            int tala1 = rand.Next(0, 45);
+            int tala2 = rand.Next(0, 45);
 
             
-            for (int i = 0; i < lid.Length; i++)
+            
+            for (int i = 0; i < nofn.Length; i++)
             {
-                lid[i] = new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]);
+                stokkur.Add( new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]));
+                //lid[i] = new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]);
             }
 
-
+            for (int i = 0; i < stokkur.Count; i++)
+            {
+                int naestaspil = rand.Next(0,stokkur.Count);
+                if (i%2==0)
+                {
+                    stokkur_tol.Add(stokkur[naestaspil]);
+                }
+                else
+                {
+                    stokkur_not.Add(stokkur[naestaspil]);
+                }
+                stokkur.Remove(stokkur[naestaspil]);
+            }
                 Console.WriteLine("Þetta er spilið þitt");
-                Console.WriteLine(lid[tala1] + "\n");
+                //Console.WriteLine(lid[tala1] + "\n");
                 Console.WriteLine("Veldu 1,2 eða 3");
                 Console.WriteLine("1. Fótbolti");
                 Console.WriteLine("2. Handbolti");

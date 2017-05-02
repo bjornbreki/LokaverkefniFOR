@@ -1,0 +1,17 @@
+ef stokkur_not[0].Fotbolti > stokkur_tol[0].Fotbolti
+{
+	þá reiknið þið ef þið viljið muninn
+	skrifið út upplýsingar
+#setjið bæði spilin hjá þeim sem vinnur:
+	stokkur_not.Add(stokkur_not[0])
+	stokkur_not.Add(stokkur_tol[0])
+	ef templisti er >0 þá bæta spilum úr honu í stokk sigurvegara (forlykkju)
+}
+Endurtakið athugun með að hinn vinni og gerið öfugt
+else #jafntefli
+{
+	Bæta spilunum í nýjan temp lista
+}
+fjrarlægja fremsta spil úr báum bunkum spilara
+stokkur_not.Remove(stokkur_not[0]) og líka fyrir tol
+
