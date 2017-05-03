@@ -19,9 +19,9 @@ namespace Lokaverkefni_For_Keyrsla
         {
 
 
-            int[] Fotbolti = new int[45];
-            int[] Handbolti = new int[45];
-            int[] Korfubolti = new int[45];
+            int[] Fotbolti = new int[44];
+            int[] Handbolti = new int[44];
+            int[] Korfubolti = new int[44];
 
 
             List<Ithrottarlid> stokkur = new List<Ithrottarlid>();
@@ -31,7 +31,7 @@ namespace Lokaverkefni_For_Keyrsla
 
 
             string[] nofn = new string[]{"Afturelding", "Álftanes", "Ármann", "Björk", "Breidablik", "FH", "Fjölnir", "Fram", "FSU", "Fylkir", "Gerpla", "Gnupverjar", "Grindavík", "Grótta", "Grundafjordur",
-                "Hamar", "Hamrarnir", "Haukar", "HK", "Höttur", "Hrunamenn", "ÍA", "ÍBV", "IF Mílan", "ÍG", "ÍR", "Íþróttarfélagið Hörður", "Íþróttarfélag Breiðholts", "KR", "Leiknir", "Njardvík",
+                "Hamar", "Hamrarnir", "Haukar", "HK", "Höttur", "Hrunamenn", "ÍA", "ÍBV", "IF Mílan", "ÍR", "Íþróttarfélagið Hörður", "Íþróttarfélag Breiðholts", "KR", "Leiknir", "Njardvík",
                 "Reykdælir", "Reynir Sandgerði", "Sindri", "Snæfell", "Stál Úlfur", "Stjarnan", "UMF Akureyri", "UMF Hekla", "UMF Kormákur", "UMF Þór", "Valur", "Volsungur", "Þór Akureyri", "Þróttur"};
             
 
@@ -42,30 +42,36 @@ namespace Lokaverkefni_For_Keyrsla
             {
                 stokkur.Add( new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]));
             }
+
+            int lengd = stokkur.Count;
+            for (int i = 0; i <= stokkur.Count; i++)
+            {
+                int naestaspil = rand.Next(0, stokkur.Count);
+                if (i % 2 == 0)
+                {
+                    stokkur_tol.Add(stokkur[naestaspil]);
+                }
+                else
+                {
+                    stokkur_not.Add(stokkur[naestaspil]);
+                }
+                stokkur.Remove(stokkur[naestaspil]);
+            }
+
+
             Console.WriteLine("Ýttu á 1 til að spila");
             int val1 = Convert.ToInt32(Console.ReadLine());
+            int lok = 0;
             Console.Clear();
-            while (val1 == 1)
+            
+            while (val1 == 1 && lok != 1)
 	        {
-	         
-
-                for (int i = 0; i < stokkur.Count; i++)
-                    {
-                        int naestaspil = rand.Next(0,stokkur.Count);
-                        if (i%2==0)
-                        {
-                            stokkur_tol.Add(stokkur[naestaspil]);
-                        }
-                        else
-                        {
-                            stokkur_not.Add(stokkur[naestaspil]);
-                        }
-                        stokkur.Remove(stokkur[naestaspil]);
-                    }
-
-
+                
+                
+                Console.WriteLine("Þú ert með " + stokkur_not.Count + " spil í stokknum þínum");
+                Console.WriteLine("talvan er með " + stokkur_tol.Count + " spil í stokknum sínum");
                 Console.WriteLine("Þetta er spilið þitt");
-                Console.WriteLine(stokkur_not[0]+"\n");
+                Console.WriteLine(stokkur_not[0] + "\n");
                 Console.WriteLine("Veldu 1,2 eða 3");
                 Console.WriteLine("1. Fótbolti");
                 Console.WriteLine("2. Handbolti");
@@ -108,13 +114,15 @@ namespace Lokaverkefni_For_Keyrsla
                         Console.WriteLine("Það var jafntefli!");
                         stokkur_temp.Add(stokkur_not[0]);
                         stokkur_temp.Add(stokkur_tol[0]);
-                        stokkur_not.Remove(stokkur_not[0]);
-                        stokkur_tol.Remove(stokkur_tol[0]);
                     }
                     else
 	                {
                         Console.WriteLine("Einhver villa.");
 	                }
+
+                    stokkur_not.Remove(stokkur_not[0]);
+                    stokkur_tol.Remove(stokkur_tol[0]);
+
                 }
                 else if (val == 2)
                 {
@@ -160,6 +168,8 @@ namespace Lokaverkefni_For_Keyrsla
                     {
                         Console.WriteLine("Einhver villa.");
                     }
+                    stokkur_not.Remove(stokkur_not[0]);
+                    stokkur_tol.Remove(stokkur_tol[0]);
                 }
                 else if (val == 3)
                 {
@@ -198,15 +208,34 @@ namespace Lokaverkefni_For_Keyrsla
                     {
                         Console.WriteLine("Einhver villa.");
                     }
+                    stokkur_not.Remove(stokkur_not[0]);
+                    stokkur_tol.Remove(stokkur_tol[0]);
                 }
                 
                 Console.WriteLine("Þetta er spilið hjá tölvuni");
                 Console.WriteLine(stokkur_tol[0]+"\n");
                 Console.ReadLine();
+                if (stokkur_not.Count == 0)
+                {
+                    lok = 1;
+                }
+                else if (stokkur_tol.Count == 0)
+                {
+                    lok = 2;
+                }
                 Console.WriteLine("Ýttu á 1 til að spila aftur");
                 val1 = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
 	        }
+
+            if (lok == 1)
+            {
+                Console.WriteLine("Þú tapaðir!");
+            }
+            else if (lok == 2)
+            {
+                Console.WriteLine("Þú vinnur!");
+            }
             
         }// endir á main
     }
