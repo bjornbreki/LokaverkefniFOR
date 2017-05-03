@@ -25,6 +25,7 @@ namespace Lokaverkefni_For_Keyrsla
             List<Ithrottarlid> stokkur = new List<Ithrottarlid>();
             List<Ithrottarlid> stokkur_not = new List<Ithrottarlid>();
             List<Ithrottarlid> stokkur_tol = new List<Ithrottarlid>();
+            List<Ithrottarlid> stokkur_temp = new List<Ithrottarlid>();
             string[] nofn = new string[]{"Afturelding", "Álftanes", "Ármann", "Björk", "Breidablik", "FH", "Fjölnir", "Fram", "FSU", "Fylkir", "Gerpla", "Gnupverjar", "Grindavík", "Grótta", "Grundafjordur",
                 "Hamar", "Hamrarnir", "Haukar", "HK", "Höttur", "Hrunamenn", "ÍA", "ÍBV", "IF Mílan", "ÍG", "ÍR", "Íþróttarfélagið Hörður", "Íþróttarfélag Breiðholts", "KR", "Leiknir", "Njardvík",
                 "Reykdælir", "Reynir Sandgerði", "Sindri", "Snæfell", "Stál Úlfur", "Stjarnan", "UMF Akureyri", "UMF Hekla", "UMF Kormákur", "UMF Þór", "Valur", "Volsungur", "Þór Akureyri", "Þróttur"};
@@ -41,8 +42,12 @@ namespace Lokaverkefni_For_Keyrsla
                 stokkur.Add( new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]));
                 //lid[i] = new Ithrottarlid(Fotbolti[i] = rand.Next(50, 101), Handbolti[i] = rand.Next(50, 101), Korfubolti[i] = rand.Next(50, 101), nofn[i]);
             }
-
-            for (int i = 0; i < stokkur.Count; i++)
+            Console.WriteLine("Viltu spila?");
+            string val1 = Console.ReadLine();
+            switch (val1)
+            {
+                case "1":
+                    for (int i = 0; i < stokkur.Count; i++)
             {
                 int naestaspil = rand.Next(0,stokkur.Count);
                 if (i%2==0)
@@ -56,7 +61,7 @@ namespace Lokaverkefni_For_Keyrsla
                 stokkur.Remove(stokkur[naestaspil]);
             }
                 Console.WriteLine("Þetta er spilið þitt");
-                //Console.WriteLine(lid[tala1] + "\n");
+                Console.WriteLine(stokkur_not[0]+"\n");
                 Console.WriteLine("Veldu 1,2 eða 3");
                 Console.WriteLine("1. Fótbolti");
                 Console.WriteLine("2. Handbolti");
@@ -64,21 +69,43 @@ namespace Lokaverkefni_For_Keyrsla
                 int val = Convert.ToInt32(Console.ReadLine());
                 if (val == 1)
                 {
-                    if (Fotbolti[tala1] > Fotbolti[tala2])
+                    if (stokkur_not[0].Fotbolti > stokkur_tol[0].Fotbolti)
                     {
-                        int stig = Fotbolti[tala1] - Fotbolti[tala2];
+                        int stig = stokkur_not[0].Fotbolti - stokkur_tol[0].Fotbolti;
                         Console.WriteLine("Þú vannst!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_not.Add(stokkur_not[0]);
+                        stokkur_not.Add(stokkur_tol[0]);
+                        if (stokkur_temp.Count > 0)
+                        {
+                            for (int i = 0; i < stokkur_temp.Count; i++)
+                            {
+                                stokkur_not.Add(stokkur_temp[i]);
+                            }
+                        }
                     }
-                    else if (Fotbolti[tala2] > Fotbolti[tala1])
+                    else if (stokkur_tol[0].Fotbolti > stokkur_not[0].Fotbolti)
                     {
-                        int stig = Fotbolti[tala2] - Fotbolti[tala1];
-                        Console.WriteLine("Þú tapaðir!");
+                        int stig = stokkur_tol[0].Fotbolti - stokkur_not[0].Fotbolti;
+                        Console.WriteLine("Þú Tapaðir!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_tol.Add(stokkur_not[0]);
+                        stokkur_tol.Add(stokkur_tol[0]);
+                        if (stokkur_temp.Count > 0)
+                        {
+                            for (int i = 0; i < stokkur_temp.Count; i++)
+                            {
+                                stokkur_tol.Add(stokkur_temp[i]);
+                            }
+                        }
                     }
-                    else if (Fotbolti[tala1] == Fotbolti[tala2])
+                    else if (stokkur_not[0].Fotbolti == stokkur_tol[0].Fotbolti)
                     {
                         Console.WriteLine("Það var jafntefli!");
+                        stokkur_temp.Add(stokkur_not[0]);
+                        stokkur_temp.Add(stokkur_tol[0]);
+                        stokkur_not.Remove(stokkur_not[0]);
+                        stokkur_tol.Remove(stokkur_tol[0]);
                     }
                     else
 	                {
@@ -87,54 +114,98 @@ namespace Lokaverkefni_For_Keyrsla
                 }
                 else if (val == 2)
                 {
-                    if (Handbolti[tala1] > Handbolti[tala2])
+                    if (stokkur_not[0].Handbolti > stokkur_tol[0].Handbolti)
                     {
-                        int stig = Handbolti[tala1] - Handbolti[tala2];
+                        int stig = stokkur_not[0].Handbolti - stokkur_tol[0].Handbolti;
                         Console.WriteLine("Þú vannst!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_not.Add(stokkur_not[0]);
+                        stokkur_not.Add(stokkur_tol[0]);
+                        if (stokkur_temp.Count > 0)
+                        {
+                            for (int i = 0; i < stokkur_temp.Count; i++)
+                            {
+                                stokkur_not.Add(stokkur_temp[i]);
+                            }
+                        }
                     }
-                    else if (Handbolti[tala2] > Handbolti[tala1])
+                    else if (stokkur_tol[0].Handbolti > stokkur_not[0].Handbolti)
                     {
-                        int stig = Handbolti[tala2] - Handbolti[tala1];
-                        Console.WriteLine("Þú tapaðir!");
+                        int stig = stokkur_tol[0].Handbolti - stokkur_not[0].Handbolti;
+                        Console.WriteLine("Þú Tapaðir!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_tol.Add(stokkur_not[0]);
+                        stokkur_tol.Add(stokkur_tol[0]);
+                        if (stokkur_temp.Count > 0)
+                        {
+                            for (int i = 0; i < stokkur_temp.Count; i++)
+                            {
+                                stokkur_tol.Add(stokkur_temp[i]);
+                            }
+                        }
                     }
-                    else if (Handbolti[tala1] == Handbolti[tala2])
+                    else if (stokkur_not[0].Handbolti == stokkur_tol[0].Handbolti)
                     {
                         Console.WriteLine("Það var jafntefli!");
+                        stokkur_temp.Add(stokkur_not[0]);
+                        stokkur_temp.Add(stokkur_tol[0]);
+                        stokkur_not.Remove(stokkur_not[0]);
+                        stokkur_tol.Remove(stokkur_tol[0]);
                     }
                     else
-	                {
+                    {
                         Console.WriteLine("Einhver villa.");
-	                }
+                    }
                 }
                 else if (val == 3)
                 {
-                    if (Korfubolti[tala1] > Korfubolti[tala2])
+                    if (stokkur_not[0].Korfubolti > stokkur_tol[0].Korfubolti)
                     {
-                        int stig = Korfubolti[tala1] - Korfubolti[tala2];
+                        int stig = stokkur_not[0].Korfubolti - stokkur_tol[0].Korfubolti;
                         Console.WriteLine("Þú vannst!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_not.Add(stokkur_not[0]);
+                        stokkur_not.Add(stokkur_tol[0]);
+                        if (stokkur_temp.Count > 0)
+                        {
+                            for (int i = 0; i < stokkur_temp.Count; i++)
+                            {
+                                stokkur_not.Add(stokkur_temp[i]);
+                            }
+                        }
                     }
-                    else if (Korfubolti[tala2] > Korfubolti[tala1])
+                    else if (stokkur_tol[0].Korfubolti > stokkur_not[0].Korfubolti)
                     {
-                        int stig = Korfubolti[tala2] - Korfubolti[tala1];
-                        Console.WriteLine("Þú tapaðir!");
+                        int stig = stokkur_tol[0].Korfubolti - stokkur_not[0].Korfubolti;
+                        Console.WriteLine("Þú Tapaðir!");
                         Console.WriteLine("Það munaði " + stig + " stigum!");
+                        stokkur_tol.Add(stokkur_not[0]);
+                        stokkur_tol.Add(stokkur_tol[0]);
                     }
-                    else if (Korfubolti[tala1] == Korfubolti[tala2])
+                    else if (stokkur_not[0].Korfubolti == stokkur_tol[0].Korfubolti)
                     {
                         Console.WriteLine("Það var jafntefli!");
+                        stokkur_temp.Add(stokkur_not[0]);
+                        stokkur_temp.Add(stokkur_tol[0]);
+                        stokkur_not.Remove(stokkur_not[0]);
+                        stokkur_tol.Remove(stokkur_tol[0]);
                     }
                     else
-	                {
+                    {
                         Console.WriteLine("Einhver villa.");
-	                }
+                    }
                 }
                 
                 Console.WriteLine("Þetta er spilið hjá tölvuni");
-                Console.WriteLine(lid[tala2] + "\n");
+                Console.WriteLine(stokkur_tol[0]+"\n");
                 Console.ReadLine();
+                Console.WriteLine("Viltu hætta?");
+                    break;
+
+                default: Console.WriteLine("Það kom einhver villa upp.");
+                    break;
+            }
+            
         }// endir á main
     }
 }
