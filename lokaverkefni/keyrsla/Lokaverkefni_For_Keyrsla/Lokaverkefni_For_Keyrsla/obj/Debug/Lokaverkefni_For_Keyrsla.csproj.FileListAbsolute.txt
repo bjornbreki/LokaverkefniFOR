@@ -6,3 +6,11 @@ H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsl
 H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.csprojResolveAssemblyReference.cache
 H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.exe
 H:\4_onn\c\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.pdb
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.exe.config
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.exe
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.pdb
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.exe
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\Lokaverkefni_For_Keyrsla.pdb
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\lokaverkefni_for.dll
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\bin\Debug\lokaverkefni_for.pdb
+C:\Users\1802992039\Downloads\LokaverkefniFOR-master\LokaverkefniFOR-master\lokaverkefni\keyrsla\Lokaverkefni_For_Keyrsla\Lokaverkefni_For_Keyrsla\obj\Debug\Lokaverkefni_For_Keyrsla.csprojResolveAssemblyReference.cache
